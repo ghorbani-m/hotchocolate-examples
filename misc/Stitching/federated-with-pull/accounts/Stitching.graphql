@@ -1,4 +1,4 @@
-extend type Query {
+extend type Query @authorize(roles: [ "Guest", "Administrator" ]) {
   me: User! @delegate(path: "user(id: 1)")
 }
 
